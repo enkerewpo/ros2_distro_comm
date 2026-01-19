@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  foxy-talker:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.foxy
+    container_name: foxy-talker
+    network_mode: host
+    environment:
+      - ROS_DOMAIN_ID=0
+      - ROS_DISTRO=foxy
+    command: >
+      bash -c "source /opt/ros/foxy/setup.bash &&
+               python3 /ros2_ws/src/talker/talker.py"
+    stdin_open: true
+    tty: true
+
+  humble-listener:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.humble
+    container_name: humble-listener
+    network_mode: host
+    environment:
+      - ROS_DOMAIN_ID=0
+      - ROS_DISTRO=humble
+    command: >
+      bash -c "source /opt/ros/humble/setup.bash &&
+               python3 /ros2_ws/src/listener/listener.py"
+    stdin_open: true
+    tty: true
+    depends_on:
+      - foxy-talker

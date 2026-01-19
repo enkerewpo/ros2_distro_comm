@@ -1,0 +1,17 @@
+FROM ros:jazzy
+
+# Create workspace
+WORKDIR /ros2_ws
+
+# Copy source files
+COPY src/ /ros2_ws/src/
+
+# Make Python scripts executable
+RUN chmod +x /ros2_ws/src/talker/talker.py && \
+    chmod +x /ros2_ws/src/listener/listener.py
+
+# Source ROS2 setup
+RUN echo "source /opt/ros/jazzy/setup.bash" >> /root/.bashrc
+
+# Set environment variable
+ENV ROS_DISTRO=jazzy
