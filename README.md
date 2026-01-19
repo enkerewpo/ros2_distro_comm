@@ -40,6 +40,16 @@ ros2_distro_comm/
 
 ## Usage
 
+### Quick Start with Helper Scripts
+
+```bash
+# Test Foxy-Humble communication
+./test-foxy-humble.sh
+
+# Test Humble-Jazzy communication
+./test-humble-jazzy.sh
+```
+
 ### Test Foxy-Humble Communication
 
 Run the following command to test communication between Foxy (talker) and Humble (listener):
