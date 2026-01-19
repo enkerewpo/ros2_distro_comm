@@ -8,6 +8,11 @@ import rclpy
 from rclpy.node import Node
 from std_msgs.msg import String
 import os
+import sys
+
+# Add parent directory to path to import diagnostics
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from diagnostics import print_all_diagnostics
 
 
 class TalkerNode(Node):
@@ -35,6 +40,9 @@ class TalkerNode(Node):
 
 
 def main(args=None):
+    # Print diagnostic information before starting
+    print_all_diagnostics()
+    
     rclpy.init(args=args)
     talker = TalkerNode()
     
