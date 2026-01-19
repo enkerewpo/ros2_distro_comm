@@ -27,6 +27,8 @@ services:
       - ROS_DISTRO=humble
     command: >
       bash -c "source /opt/ros/humble/setup.bash &&
+               echo 'Waiting 5 seconds for talker to start...' &&
+               sleep 5 &&
                python3 /ros2_ws/src/listener/listener.py"
     stdin_open: true
     tty: true
