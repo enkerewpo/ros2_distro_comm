@@ -3,7 +3,7 @@ version: '3.8'
 services:
   humble-talker:
     build:
-      context: ..
+      context: .
       dockerfile: docker/Dockerfile.humble
     container_name: humble-talker
     network_mode: host
@@ -18,7 +18,7 @@ services:
 
   jazzy-listener:
     build:
-      context: ..
+      context: .
       dockerfile: docker/Dockerfile.jazzy
     container_name: jazzy-listener
     network_mode: host

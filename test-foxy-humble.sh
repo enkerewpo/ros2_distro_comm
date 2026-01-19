@@ -14,4 +14,4 @@ echo ""
 echo "Press Ctrl+C to stop the test"
 echo ""
 
-docker-compose -f docker-compose.foxy-humble.yml up --build
+docker compose -f docker-compose.foxy-humble.yml up --build
