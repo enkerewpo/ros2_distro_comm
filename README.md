@@ -18,7 +18,7 @@ The project consists of:
 ## Prerequisites
 
 - Docker Engine (version 20.10 or higher)
-- Docker Compose (version 1.29 or higher)
+- Docker Compose V2 (version 2.0 or higher)
 
 ## Project Structure
 
@@ -55,7 +55,7 @@ ros2_distro_comm/
 Run the following command to test communication between Foxy (talker) and Humble (listener):
 
 ```bash
-docker-compose -f docker-compose.foxy-humble.yml up --build
+docker compose -f docker-compose.foxy-humble.yml up --build
 ```
 
 **Expected behavior:**
@@ -68,7 +68,7 @@ docker-compose -f docker-compose.foxy-humble.yml up --build
 Run the following command to test communication between Humble (talker) and Jazzy (listener):
 
 ```bash
-docker-compose -f docker-compose.humble-jazzy.yml up --build
+docker compose -f docker-compose.humble-jazzy.yml up --build
 ```
 
 **Expected behavior:**
@@ -82,10 +82,10 @@ To stop the running containers:
 
 ```bash
 # For Foxy-Humble test
-docker-compose -f docker-compose.foxy-humble.yml down
+docker compose -f docker-compose.foxy-humble.yml down
 
 # For Humble-Jazzy test
-docker-compose -f docker-compose.humble-jazzy.yml down
+docker compose -f docker-compose.humble-jazzy.yml down
 ```
 
 ## Technical Details

@@ -3,7 +3,7 @@ version: '3.8'
 services:
   foxy-talker:
     build:
-      context: ..
+      context: .
       dockerfile: docker/Dockerfile.foxy
     container_name: foxy-talker
     network_mode: host
@@ -18,7 +18,7 @@ services:
 
   humble-listener:
     build:
-      context: ..
+      context: .
       dockerfile: docker/Dockerfile.humble
     container_name: humble-listener
     network_mode: host
